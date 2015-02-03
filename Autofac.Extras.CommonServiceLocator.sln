@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autofac.Extras.CommonServiceLocator", "src\Autofac.Extras.CommonServiceLocator\Autofac.Extras.CommonServiceLocator.csproj", "{7A6DB23D-117E-4742-A9FA-8A6956DF6829}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autofac.Extras.Tests.CommonServiceLocator", "test\Autofac.Extras.Tests.CommonServiceLocator\Autofac.Extras.Tests.CommonServiceLocator.csproj", "{304C6D1B-7264-408E-BE9B-4F6E6462CF08}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7A6DB23D-117E-4742-A9FA-8A6956DF6829}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A6DB23D-117E-4742-A9FA-8A6956DF6829}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A6DB23D-117E-4742-A9FA-8A6956DF6829}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A6DB23D-117E-4742-A9FA-8A6956DF6829}.Release|Any CPU.Build.0 = Release|Any CPU
+		{304C6D1B-7264-408E-BE9B-4F6E6462CF08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{304C6D1B-7264-408E-BE9B-4F6E6462CF08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{304C6D1B-7264-408E-BE9B-4F6E6462CF08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{304C6D1B-7264-408E-BE9B-4F6E6462CF08}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
