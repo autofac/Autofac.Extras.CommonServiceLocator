@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Reflection;
 using System.Resources;
+using System.Security;
 
 [assembly: AssemblyTitle("Autofac.Extras.CommonServiceLocator")]
 [assembly: CLSCompliant(true)]
+[assembly: AllowPartiallyTrustedCallers]
 
 [assembly: AssemblyCompany("Autofac Project - http://autofac.org")]
 [assembly: AssemblyProduct("Autofac")]
