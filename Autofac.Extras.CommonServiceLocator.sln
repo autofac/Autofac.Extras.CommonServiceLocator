@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autofac.Extras.CommonServiceLocator", "src\Autofac.Extras.CommonServiceLocator\Autofac.Extras.CommonServiceLocator.csproj", "{7A6DB23D-117E-4742-A9FA-8A6956DF6829}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autofac.Extras.Tests.CommonServiceLocator", "test\Autofac.Extras.Tests.CommonServiceLocator\Autofac.Extras.Tests.CommonServiceLocator.csproj", "{304C6D1B-7264-408E-BE9B-4F6E6462CF08}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autofac.Extras.CommonServiceLocator.Test", "test\Autofac.Extras.CommonServiceLocator.Test\Autofac.Extras.CommonServiceLocator.Test.csproj", "{304C6D1B-7264-408E-BE9B-4F6E6462CF08}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
