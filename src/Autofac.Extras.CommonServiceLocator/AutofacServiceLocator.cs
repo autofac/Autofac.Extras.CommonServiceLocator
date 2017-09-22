@@ -33,6 +33,7 @@ namespace Autofac.Extras.CommonServiceLocator
             {
                 throw new ArgumentNullException("container");
             }
+
             _container = container;
         }
 
@@ -51,6 +52,7 @@ namespace Autofac.Extras.CommonServiceLocator
             {
                 throw new ArgumentNullException("serviceType");
             }
+
             return key != null ? _container.ResolveNamed(key, serviceType) : _container.Resolve(serviceType);
         }
 
@@ -68,6 +70,7 @@ namespace Autofac.Extras.CommonServiceLocator
             {
                 throw new ArgumentNullException("serviceType");
             }
+
             var enumerableType = typeof(IEnumerable<>).MakeGenericType(serviceType);
 
             object instance = _container.Resolve(enumerableType);
