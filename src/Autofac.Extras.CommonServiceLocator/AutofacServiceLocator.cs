@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.Practices.ServiceLocation;
+using CommonServiceLocator;
 
 namespace Autofac.Extras.CommonServiceLocator
 {
@@ -29,12 +29,7 @@ namespace Autofac.Extras.CommonServiceLocator
         /// </exception>
         public AutofacServiceLocator(IComponentContext container)
         {
-            if (container == null)
-            {
-                throw new ArgumentNullException("container");
-            }
-
-            _container = container;
+            _container = container ?? throw new ArgumentNullException(nameof(container));
         }
 
         /// <summary>
@@ -50,7 +45,7 @@ namespace Autofac.Extras.CommonServiceLocator
         {
             if (serviceType == null)
             {
-                throw new ArgumentNullException("serviceType");
+                throw new ArgumentNullException(nameof(serviceType));
             }
 
             return key != null ? _container.ResolveNamed(key, serviceType) : _container.Resolve(serviceType);
@@ -68,12 +63,12 @@ namespace Autofac.Extras.CommonServiceLocator
         {
             if (serviceType == null)
             {
-                throw new ArgumentNullException("serviceType");
+                throw new ArgumentNullException(nameof(serviceType));
             }
 
             var enumerableType = typeof(IEnumerable<>).MakeGenericType(serviceType);
 
-            object instance = _container.Resolve(enumerableType);
+            var instance = _container.Resolve(enumerableType);
             return ((IEnumerable)instance).Cast<object>();
         }
     }
