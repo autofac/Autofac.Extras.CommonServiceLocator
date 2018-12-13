@@ -6,6 +6,6 @@ Common Service Locator implementation for Autofac IoC
 
 Please file issues and pull requests for this package in this repository rather than in the Autofac core repo.
 
-- [Documentation](http://autofac.readthedocs.io/en/latest/integration/csl.html)
+- [Documentation](https://autofac.readthedocs.io/en/latest/integration/csl.html)
 - [NuGet](https://www.nuget.org/packages/Autofac.Extras.CommonServiceLocator/)
-- [Contributing](http://autofac.readthedocs.io/en/latest/contributors.html)
+- [Contributing](https://autofac.readthedocs.io/en/latest/contributors.html)
