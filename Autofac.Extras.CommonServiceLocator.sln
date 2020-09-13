@@ -1,11 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26430.16
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autofac.Extras.CommonServiceLocator", "src\Autofac.Extras.CommonServiceLocator\Autofac.Extras.CommonServiceLocator.csproj", "{7A6DB23D-117E-4742-A9FA-8A6956DF6829}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autofac.Extras.CommonServiceLocator.Test", "test\Autofac.Extras.CommonServiceLocator.Test\Autofac.Extras.CommonServiceLocator.Test.csproj", "{304C6D1B-7264-408E-BE9B-4F6E6462CF08}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9A5D1456-F759-48AB-B365-A7BC33619739}"
+	ProjectSection(SolutionItems) = preProject
+		appveyor.yml = appveyor.yml
+		global.json = global.json
+		NuGet.Config = NuGet.Config
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +31,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5BF15888-EFB2-4BB2-B938-EAF74B956AB5}
 	EndGlobalSection
 EndGlobal
