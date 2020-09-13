@@ -1,3 +1,6 @@
+// Copyright (c) Autofac Project. All rights reserved.
+// Licensed under the MIT License. See LICENSE in the project root for license information.
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -56,16 +59,16 @@ namespace Autofac.Extras.CommonServiceLocator.Test
         public void GenericOverload_GetInstance()
         {
             Assert.Equal(
-_locator.GetInstance<ILogger>().GetType(),
-_locator.GetInstance(typeof(ILogger), null).GetType());
+                _locator.GetInstance<ILogger>().GetType(),
+                _locator.GetInstance(typeof(ILogger), null).GetType());
         }
 
         [Fact]
         public void GenericOverload_GetInstance_WithName()
         {
             Assert.Equal(
-_locator.GetInstance<ILogger>(typeof(AdvancedLogger).FullName).GetType(),
-_locator.GetInstance(typeof(ILogger), typeof(AdvancedLogger).FullName).GetType());
+                _locator.GetInstance<ILogger>(typeof(AdvancedLogger).FullName).GetType(),
+                _locator.GetInstance(typeof(ILogger), typeof(AdvancedLogger).FullName).GetType());
         }
 
         [Fact]
