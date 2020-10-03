@@ -1,12 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.1</TargetFrameworks>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <NoWarn>$(NoWarn);CS1591;SA1600</NoWarn>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyOriginatorKeyFile>../../Autofac.snk</AssemblyOriginatorKeyFile>
     <SignAssembly>true</SignAssembly>
-    <PublicSign Condition=" '$(OS)' != 'Windows_NT' ">true</PublicSign>
     <CodeAnalysisRuleSet>../../build/Analyzers.ruleset</CodeAnalysisRuleSet>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
@@ -19,7 +18,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
-    <PackageReference Include="Moq" Version="4.14.5" />
+    <PackageReference Include="Moq" Version="4.14.6" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.113">
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
@@ -32,10 +31,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Autofac.Extras.CommonServiceLocator\Autofac.Extras.CommonServiceLocator.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
   </ItemGroup>
 
 </Project>

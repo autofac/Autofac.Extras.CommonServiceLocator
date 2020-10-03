@@ -20,13 +20,13 @@ namespace Autofac.Extras.CommonServiceLocator.Test
 
             builder
                 .RegisterType<SimpleLogger>()
-                .Named<ILogger>(typeof(SimpleLogger).FullName)
+                .Named<ILogger>(typeof(SimpleLogger).FullName!)
                 .SingleInstance()
                 .As<ILogger>();
 
             builder
                 .RegisterType<AdvancedLogger>()
-                .Named<ILogger>(typeof(AdvancedLogger).FullName)
+                .Named<ILogger>(typeof(AdvancedLogger).FullName!)
                 .SingleInstance()
                 .As<ILogger>();
 

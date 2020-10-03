@@ -12,7 +12,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		appveyor.yml = appveyor.yml
 		global.json = global.json
 		NuGet.Config = NuGet.Config
+		.gitignore = .gitignore
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C495880E-5918-499B-8395-52286E81032E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{8D91D8BA-DBE1-43B5-9CBF-2D26B4DCEC69}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{44425304-538B-473A-BA28-D681D1882B30}"
+ProjectSection(SolutionItems) = preProject
+	build\Analyzers.ruleset = build\Analyzers.ruleset
+	build\Autofac.Build.psd1 = build\Autofac.Build.psd1
+	build\Autofac.Build.psm1 = build\Autofac.Build.psm1
+	build\CodeAnalysisDictionary.xml = build\CodeAnalysisDictionary.xml
+	build\icon.png = build\icon.png
+EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,5 +48,9 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5BF15888-EFB2-4BB2-B938-EAF74B956AB5}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7A6DB23D-117E-4742-A9FA-8A6956DF6829} = {C495880E-5918-499B-8395-52286E81032E}
+		{304C6D1B-7264-408E-BE9B-4F6E6462CF08} = {8D91D8BA-DBE1-43B5-9CBF-2D26B4DCEC69}
 	EndGlobalSection
 EndGlobal

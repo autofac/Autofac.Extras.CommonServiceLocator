@@ -4,7 +4,7 @@
     <Description>Autofac extension for using the Microsoft Enterprise Library Common Service Locator with Autofac.</Description>
     <!-- VersionPrefix patched by AppVeyor -->
     <VersionPrefix>0.0.1</VersionPrefix>
-    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>Autofac.Extras.CommonServiceLocator</AssemblyName>
@@ -34,7 +34,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Autofac" Version="[5.0.0,7.0.0)" />
+    <PackageReference Include="Autofac" Version="6.0.0" />
     <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.0">
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
