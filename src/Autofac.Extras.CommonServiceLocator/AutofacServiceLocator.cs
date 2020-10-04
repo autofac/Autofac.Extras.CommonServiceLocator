@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Autofac Project. All rights reserved.
+// Licensed under the MIT License. See LICENSE in the project root for license information.
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,19 +15,19 @@ namespace Autofac.Extras.CommonServiceLocator
     public class AutofacServiceLocator : ServiceLocatorImplBase
     {
         /// <summary>
-        /// The <see cref="Autofac.IComponentContext"/> from which services
+        /// The <see cref="IComponentContext"/> from which services
         /// should be located.
         /// </summary>
         private readonly IComponentContext _container;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Autofac.Extras.CommonServiceLocator.AutofacServiceLocator" /> class.
+        /// Initializes a new instance of the <see cref="AutofacServiceLocator" /> class.
         /// </summary>
         /// <param name="container">
-        /// The <see cref="Autofac.IComponentContext"/> from which services
+        /// The <see cref="IComponentContext"/> from which services
         /// should be located.
         /// </param>
-        /// <exception cref="System.ArgumentNullException">
+        /// <exception cref="ArgumentNullException">
         /// Thrown if <paramref name="container" /> is <see langword="null" />.
         /// </exception>
         public AutofacServiceLocator(IComponentContext container)
@@ -38,7 +41,7 @@ namespace Autofac.Extras.CommonServiceLocator
         /// <param name="serviceType">Type of instance requested.</param>
         /// <param name="key">Name of registered service you want. May be <see langword="null" />.</param>
         /// <returns>The requested service instance.</returns>
-        /// <exception cref="System.ArgumentNullException">
+        /// <exception cref="ArgumentNullException">
         /// Thrown if <paramref name="serviceType" /> is <see langword="null" />.
         /// </exception>
         protected override object DoGetInstance(Type serviceType, string key)
@@ -56,7 +59,7 @@ namespace Autofac.Extras.CommonServiceLocator
         /// </summary>
         /// <param name="serviceType">Type of instance requested.</param>
         /// <returns>Sequence of service instance objects.</returns>
-        /// <exception cref="System.ArgumentNullException">
+        /// <exception cref="ArgumentNullException">
         /// Thrown if <paramref name="serviceType" /> is <see langword="null" />.
         /// </exception>
         protected override IEnumerable<object> DoGetAllInstances(Type serviceType)
