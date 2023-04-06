@@ -5,17 +5,11 @@
       ],
       "console": "internalConsole",
       "cwd": "${workspaceFolder}/test/Autofac.Extras.CommonServiceLocator.Test",
-      "name": ".NET Core Launch (console)",
+      "name": "Launch Tests (console)",
       "preLaunchTask": "build",
-      "program": "${workspaceFolder}/test/Autofac.Extras.CommonServiceLocator.Test/bin/Debug/netcoreapp2.1/Autofac.Extras.CommonServiceLocator.Test.dll",
+      "program": "${workspaceFolder}/test/Autofac.Extras.CommonServiceLocator.Test/bin/Debug/net7.0/Autofac.Extras.CommonServiceLocator.Test.dll",
       "request": "launch",
       "stopAtEntry": false,
-      "type": "coreclr"
-    },
-    {
-      "name": ".NET Core Attach",
-      "processId": "${command:pickProcess}",
-      "request": "attach",
       "type": "coreclr"
     }
   ],

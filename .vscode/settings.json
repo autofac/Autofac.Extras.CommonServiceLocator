@@ -1,4 +1,18 @@
 {
+  "cSpell.words": [
+    "autofac",
+    "cref",
+    "inheritdoc",
+    "langword",
+    "paramref",
+    "seealso",
+    "typeparam",
+    "xunit"
+  ],
+  "coverage-gutters.coverageBaseDir": "artifacts/coverage",
+  "coverage-gutters.coverageFileNames": [
+    "coverage.net7.0.info"
+  ],
   "dotnet-test-explorer.runInParallel": true,
   "dotnet-test-explorer.testProjectPath": "test/**/*.Test.csproj"
 }
