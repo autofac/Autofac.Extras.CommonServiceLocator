@@ -4,14 +4,13 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Autofac.Extras.CommonServiceLocator.Test.Components
+namespace Autofac.Extras.CommonServiceLocator.Test.Components;
+
+public class AdvancedLogger : ILogger
 {
-    public class AdvancedLogger : ILogger
+    [SuppressMessage("CA1303", "CA1303", Justification = "We don't need to localize strings in unit tests.")]
+    public void Log(string msg)
     {
-        [SuppressMessage("CA1303", "CA1303", Justification = "We don't need to localize strings in unit tests.")]
-        public void Log(string msg)
-        {
-            Console.WriteLine("Log: {0}", msg);
-        }
+        Console.WriteLine("Log: {0}", msg);
     }
 }
