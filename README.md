@@ -1,6 +1,6 @@
 # Autofac.Extras.CommonServiceLocator
 
-Common Service Locator implementation for Autofac IoC
+Common Service Locator implementation for Autofac.
 
 [![Build status](https://ci.appveyor.com/api/projects/status/p3hwgqspvxvmhm8n?svg=true)](https://ci.appveyor.com/project/Autofac/autofac-extras-commonservicelocator)
 
@@ -11,8 +11,18 @@ Please file issues and pull requests for this package in this repository rather 
 - [Contributing](https://autofac.readthedocs.io/en/latest/contributors.html)
 - [Open in Visual Studio Code](https://open.vscode.dev/autofac/Autofac.Extras.CommonServiceLocator)
 
-
 ## Quick Start
+
+```c#
+var builder = new ContainerBuilder();
+
+// Perform registrations and build the container.
+var container = builder.Build();
+
+// Set the service locator to an AutofacServiceLocator.
+var csl = new AutofacServiceLocator(container);
+ServiceLocator.SetLocatorProvider(() => csl);
+```
 
 Check out the [Autofac Common Service Locator documentation](https://autofac.readthedocs.io/en/latest/integration/csl.html) for more information.
 
