@@ -21,6 +21,10 @@
     <!-- Mark ISerializable types with SerializableAttribute - false positive when building .NET Core. -->
     <Rule Id="CA2237" Action="None" />
   </Rules>
+  <Rules AnalyzerId="xunit.analyzers" RuleNamespace="xunit.analyzers">
+    <!-- Do not use Assert.Equal to check for collection size - existing test patterns. -->
+    <Rule Id="xUnit2013" Action="None" />
+  </Rules>
   <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
     <!-- Prefix local calls with this -->
     <Rule Id="SA1101" Action="None" />
@@ -56,6 +60,7 @@
     <Rule Id="SA1618" Action="None" />
     <!-- Don't copy/paste documentation -->
     <Rule Id="SA1625" Action="None" />
+    <Rule Id="SA1633" Action="None" />
     <!-- Exception documentation must not be empty -->
     <Rule Id="SA1627" Action="None" />
     <!-- Enable XML documentation output-->
