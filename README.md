@@ -2,7 +2,7 @@
 
 Common Service Locator implementation for Autofac.
 
-[![Build status](https://ci.appveyor.com/api/projects/status/p3hwgqspvxvmhm8n?svg=true)](https://ci.appveyor.com/project/Autofac/autofac-extras-commonservicelocator)
+[![Build status](https://github.com/autofac/Autofac.Extras.CommonServiceLocator/actions/workflows/ci.yml/badge.svg?branch=develop)](https://github.com/autofac/Autofac.Extras.CommonServiceLocator/actions/workflows/ci.yml)
 
 Please file issues and pull requests for this package in this repository rather than in the Autofac core repo.
 
