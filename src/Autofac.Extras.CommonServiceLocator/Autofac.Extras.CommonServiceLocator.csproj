@@ -1,7 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <!-- VersionPrefix patched by AppVeyor -->
-    <VersionPrefix>0.0.1</VersionPrefix>
     <!-- Assembly metadata -->
     <AssemblyName>Autofac.Extras.CommonServiceLocator</AssemblyName>
     <Description>Autofac extension for using the Microsoft Enterprise Library Common Service Locator with Autofac.</Description>
