@@ -88,7 +88,7 @@ public sealed class AutofacServiceLocatorTests
     {
         var instances = _locator.GetAllInstances<IDictionary>();
         IList<IDictionary> list = new List<IDictionary>(instances);
-        Assert.Equal(0, list.Count);
+        Assert.Empty(list);
     }
 
     [Fact]
