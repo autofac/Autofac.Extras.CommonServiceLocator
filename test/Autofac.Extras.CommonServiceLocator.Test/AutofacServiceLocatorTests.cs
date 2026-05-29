@@ -9,7 +9,7 @@ namespace Autofac.Extras.CommonServiceLocator.Test;
 
 public sealed class AutofacServiceLocatorTests
 {
-    private readonly IServiceLocator _locator;
+    private readonly AutofacServiceLocator _locator;
 
     public AutofacServiceLocatorTests()
     {
@@ -72,7 +72,7 @@ public sealed class AutofacServiceLocatorTests
     public void GetAllInstances()
     {
         var instances = _locator.GetAllInstances<ILogger>();
-        IList<ILogger> list = new List<ILogger>(instances);
+        var list = new List<ILogger>(instances);
         Assert.Equal(2, list.Count);
     }
 
