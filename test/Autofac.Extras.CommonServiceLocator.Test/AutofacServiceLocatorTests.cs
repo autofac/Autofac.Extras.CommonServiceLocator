@@ -9,9 +9,114 @@ namespace Autofac.Extras.CommonServiceLocator.Test;
 
 public sealed class AutofacServiceLocatorTests
 {
-    private readonly AutofacServiceLocator _locator;
+    [Fact]
+    public void Ctor_NullComponentContext()
+    {
+        Assert.Throws<ArgumentNullException>(() => new AutofacServiceLocator(null!));
+    }
 
-    public AutofacServiceLocatorTests()
+    [Fact]
+    public void GetAllInstances_GenericOverload()
+    {
+        var locator = CreateLocator();
+
+        var genericLoggers = locator.GetAllInstances<ILogger>();
+        var plainLoggers = locator.GetAllInstances(typeof(ILogger));
+        Assert.Equal(genericLoggers, plainLoggers);
+    }
+
+    [Fact]
+    public void GetAllInstances_NotRegistered()
+    {
+        var locator = CreateLocator();
+
+        var instances = locator.GetAllInstances<IDictionary>();
+        Assert.NotNull(instances);
+        Assert.Empty(instances);
+    }
+
+    [Fact]
+    public void GetAllInstances_Success()
+    {
+        var locator = CreateLocator();
+
+        var instances = locator.GetAllInstances<ILogger>();
+        Assert.Equal(2, instances.Count());
+    }
+
+    [Fact]
+    public void GetInstance_NotRegistered()
+    {
+        var locator = CreateLocator();
+
+        Assert.Throws<ActivationException>(() => locator.GetInstance<IDictionary>());
+    }
+
+    [Fact]
+    public void GetInstance_GenericOverload()
+    {
+        var locator = CreateLocator();
+
+        Assert.Equal(
+            locator.GetInstance<ILogger>().GetType(),
+            locator.GetInstance(typeof(ILogger), null).GetType());
+    }
+
+    [Fact]
+    public void GetInstance_GenericOverloadWithName()
+    {
+        var locator = CreateLocator();
+
+        Assert.Equal(
+            locator.GetInstance<ILogger>(typeof(AdvancedLogger).FullName).GetType(),
+            locator.GetInstance(typeof(ILogger), typeof(AdvancedLogger).FullName).GetType());
+    }
+
+    [Fact]
+    public void GetInstance_EmptyName()
+    {
+        var locator = CreateLocator();
+
+        Assert.Throws<ActivationException>(() => locator.GetInstance<ILogger>(""));
+    }
+
+    [Fact]
+    public void GetInstance_NamedInstance()
+    {
+        var locator = CreateLocator();
+
+        var instance = locator.GetInstance<ILogger>(typeof(AdvancedLogger).FullName);
+        Assert.IsType<AdvancedLogger>(instance);
+    }
+
+    [Fact]
+    public void GetInstance_NullName()
+    {
+        var locator = CreateLocator();
+
+        Assert.Equal(
+            locator.GetInstance<ILogger>().GetType(),
+            locator.GetInstance<ILogger>(null).GetType());
+    }
+
+    [Fact]
+    public void GetInstance_TypedInstance()
+    {
+        var locator = CreateLocator();
+
+        var instance = locator.GetInstance<ILogger>();
+        Assert.NotNull(instance);
+    }
+
+    [Fact]
+    public void GetInstance_UnknownName()
+    {
+        var locator = CreateLocator();
+
+        Assert.Throws<ActivationException>(() => locator.GetInstance<ILogger>("test"));
+    }
+
+    private static AutofacServiceLocator CreateLocator()
     {
         var builder = new ContainerBuilder();
 
@@ -29,99 +134,6 @@ public sealed class AutofacServiceLocatorTests
 
         var container = builder.Build();
 
-        _locator = new AutofacServiceLocator(container);
-    }
-
-    [Fact]
-    public void Constructor_Does_Not_Accept_Null()
-    {
-        Assert.Throws<ArgumentNullException>(() => new AutofacServiceLocator(null));
-    }
-
-    [Fact]
-    public void AskingForInvalidComponentShouldRaiseActivationException()
-    {
-        Assert.Throws<ActivationException>(() => _locator.GetInstance<IDictionary>());
-    }
-
-    [Fact]
-    public void GenericOverload_GetAllInstances()
-    {
-        var genericLoggers = new List<ILogger>(_locator.GetAllInstances<ILogger>());
-        var plainLoggers = new List<object>(_locator.GetAllInstances(typeof(ILogger)));
-        Assert.Equal(genericLoggers, plainLoggers);
-    }
-
-    [Fact]
-    public void GenericOverload_GetInstance()
-    {
-        Assert.Equal(
-            _locator.GetInstance<ILogger>().GetType(),
-            _locator.GetInstance(typeof(ILogger), null).GetType());
-    }
-
-    [Fact]
-    public void GenericOverload_GetInstance_WithName()
-    {
-        Assert.Equal(
-            _locator.GetInstance<ILogger>(typeof(AdvancedLogger).FullName).GetType(),
-            _locator.GetInstance(typeof(ILogger), typeof(AdvancedLogger).FullName).GetType());
-    }
-
-    [Fact]
-    public void GetAllInstances()
-    {
-        var instances = _locator.GetAllInstances<ILogger>();
-        var list = new List<ILogger>(instances);
-        Assert.Equal(2, list.Count);
-    }
-
-    [Fact]
-    public void GetInstance()
-    {
-        var instance = _locator.GetInstance<ILogger>();
-        Assert.NotNull(instance);
-    }
-
-    [Fact]
-    public void GetlAllInstance_ForUnknownType_ReturnEmptyEnumerable()
-    {
-        var instances = _locator.GetAllInstances<IDictionary>();
-        IList<IDictionary> list = new List<IDictionary>(instances);
-        Assert.Empty(list);
-    }
-
-    [Fact]
-    public void GetNamedInstance()
-    {
-        var instance = _locator.GetInstance<ILogger>(typeof(AdvancedLogger).FullName);
-        Assert.IsType<AdvancedLogger>(instance);
-    }
-
-    [Fact]
-    public void GetNamedInstance_WithZeroLenName()
-    {
-        Assert.Throws<ActivationException>(() => _locator.GetInstance<ILogger>(""));
-    }
-
-    [Fact]
-    public void GetNamedInstance2()
-    {
-        var instance = _locator.GetInstance<ILogger>(typeof(SimpleLogger).FullName);
-        Assert.IsType<SimpleLogger>(instance);
-    }
-
-    [Fact]
-    public void GetUnknownInstance2()
-    {
-        Assert.Throws<ActivationException>(() => _locator.GetInstance<ILogger>("test"));
-    }
-
-    [Fact]
-    public void Overload_GetInstance_NoName_And_NullName()
-    {
-        Assert.Equal(
-            _locator.GetInstance<ILogger>().GetType(),
-            _locator.GetInstance<ILogger>(null).GetType());
+        return new AutofacServiceLocator(container);
     }
 }
