@@ -1,8 +1,8 @@
 # Autofac.Extras.CommonServiceLocator
 
-Common Service Locator implementation for Autofac.
+Common Service Locator implementation for [Autofac](https://autofac.org).
 
-[![Build status](https://github.com/autofac/Autofac.Extras.CommonServiceLocator/actions/workflows/ci.yml/badge.svg?branch=develop)](https://github.com/autofac/Autofac.Extras.CommonServiceLocator/actions/workflows/ci.yml)
+[![Build status](https://github.com/autofac/Autofac.Extras.CommonServiceLocator/actions/workflows/main.yml/badge.svg)](https://github.com/autofac/Autofac.Extras.CommonServiceLocator/actions/workflows/main.yml) [![codecov](https://codecov.io/gh/Autofac/Autofac.Extras.CommonServiceLocator/branch/develop/graph/badge.svg)](https://codecov.io/gh/Autofac/Autofac.Extras.CommonServiceLocator) [![NuGet](https://img.shields.io/nuget/v/Autofac.Extras.CommonServiceLocator.svg)](https://nuget.org/packages/Autofac.Extras.CommonServiceLocator)
 
 Please file issues and pull requests for this package in this repository rather than in the Autofac core repo.
 
@@ -13,7 +13,7 @@ Please file issues and pull requests for this package in this repository rather 
 
 ## Quick Start
 
-```c#
+```csharp
 var builder = new ContainerBuilder();
 
 // Perform registrations and build the container.
